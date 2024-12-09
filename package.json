@@ -1,0 +1,17 @@
+{
+  "name": "gestionoffremaritime",
+  "version": "1.0.0",
+  "description": "Création d'une platforme où les éléves peuvent s'incrire et pour voir les offres de formations",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MOUSSA Soihiroudine",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-myconnection": "^1.0.4",
+    "mysql2": "^3.11.5"
+  }
+}
