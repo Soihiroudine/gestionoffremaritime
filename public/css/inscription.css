@@ -1,0 +1,67 @@
+.inscription {
+    width: 60%;
+    padding: 3em;
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.infoLiens {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.infoLiens h1 {
+    font-size: 2.5em;
+    color: #17202a;
+}
+
+.infoLiens p {
+    font-size: 1.5em;
+    margin: 1em 0.1em;
+    text-align: center;
+}
+
+.infoLiens a {
+    font-weight: bold;
+    color: #0429F1;
+}
+
+.inscription form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informationFormulaire input {
+    background-color: #A1AFF7;
+    padding: 0.9em 1em;
+    outline: none;  
+    border: none;
+    border-bottom: 2px solid #F3F9FE;
+    font-size: 1.3em;
+    transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 400px;
+}
+
+::placeholder {
+    color: #F3F9FE;
+}
+
+.informationFormulaire input[type="submit"] {
+    cursor: pointer;
+    background-color: #0289F0;
+    color: #F3F9FE;
+}
+
+.informationFormulaire input:focus, .informationFormulaire input:hover  {
+    background-color: #00F0B4;
+    border-bottom: 2px solid #0289F0;
+    color: #17202a;
+}
