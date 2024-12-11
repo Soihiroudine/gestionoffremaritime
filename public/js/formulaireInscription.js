@@ -1,5 +1,26 @@
 
 const form = document.querySelector('form');
+const oeuilImage = document.querySelectorAll('.imgMotPasse');
+const inputPassword = document.querySelectorAll(".motDePasse");
+
+for (let index = 0; index < oeuilImage.length; index++) {
+    console.log(oeuilImage[index].getAttribute("alt"));
+
+    oeuilImage[index].addEventListener("click", () => {
+        console.log(oeuilImage[index]);
+        if (oeuilImage[index].getAttribute("alt") === "hide") {
+            oeuilImage[index].setAttribute("src", "/images/passVisible.png");
+            oeuilImage[index].setAttribute("alt", "visible");
+            inputPassword[index].setAttribute("type", "text");
+        }else {
+            oeuilImage[index].setAttribute("src", "/images/passHide.png");
+            oeuilImage[index].setAttribute("alt", "hide");
+            inputPassword[index].setAttribute("type", "password"); 
+        }
+    });
+    
+}
+
 
 form.addEventListener('submit', function(event) {
     // Deuxieme formulaire : formulaire d'incription
@@ -27,6 +48,4 @@ form.addEventListener('submit', function(event) {
         alert("Les champs ne doivent pas être vide !");
         event.preventDefault();
     }
-
-
 });

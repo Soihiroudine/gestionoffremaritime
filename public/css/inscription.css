@@ -38,6 +38,9 @@
     flex-direction: column;
     align-items: center;
 }
+.informationFormulaire {
+    position: relative;
+}
 
 .informationFormulaire input {
     background-color: #A1AFF7;
@@ -60,8 +63,26 @@
     color: #F3F9FE;
 }
 
-.informationFormulaire input:focus, .informationFormulaire input:hover  {
+.informationFormulaire input:focus:not(input[type="submit"]), .informationFormulaire input:hover:not(input[type="submit"])  {
     background-color: #00F0B4;
     border-bottom: 2px solid #0289F0;
     color: #17202a;
+}
+
+.informationFormulaire img {
+    width:40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    transition-delay: 2.7s;
+}
+
+.informationFormulaire img:hover {
+    filter: sepia(100%);
+    -webkit-filter: sepia(100%);
 }
