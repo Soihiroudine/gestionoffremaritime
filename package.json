@@ -4,15 +4,21 @@
   "description": "Création d'une platforme où les éléves peuvent s'incrire et pour voir les offres de formations",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "author": "MOUSSA Soihiroudine",
   "license": "ISC",
   "dependencies": {
     "body-parse": "^0.1.0",
+    "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-flash-messages": "^0.1.1",
     "express-myconnection": "^1.0.4",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
     "mysql2": "^3.11.5"
   }
 }

@@ -5,7 +5,7 @@ const http = require("http");
 const app = require("./app.js");
 
 // On créer un port avec pour valeur 3010
-const PORT = 3010;
+const PORT = 3010 || process.env.PORT;
 
 // On modifie le port de l'application avec la valeur du PORT
 app.set("port", PORT);
