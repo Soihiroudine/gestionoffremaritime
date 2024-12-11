@@ -48,4 +48,3 @@ git push -u origin main
 ```
 
 ## Structure du projet
-
