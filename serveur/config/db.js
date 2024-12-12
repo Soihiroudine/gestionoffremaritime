@@ -1,21 +1,21 @@
 const mysql = require("mysql2");
-const myConnection = require('express-myconnection');
+require("dotenv").config();
 
-async function connectToDatabase() {
-    try {
-        const connection = {
-            host: process.env.host,
-            user: process.env.user,
-            password: process.env.password,
-            port: process.env.port,
-            database: process.env.database
-        }
-        const db = await myConnection(mysql, connection, "pool");
-        console.log('Connecté à la base de données');
-        return db;
-    } catch (error) {
-        console.error('Erreur de connexion à la base de données', error);
-  }
-}
+// const myConnection = require('express-myconnection');
+const connection = mysql.createConnection({
+    host: process.env.host,
+    user: process.env.user,
+    password: process.env.password,
+    port: process.env.port,
+    database: process.env.database
+});
 
-module.exports = connectToDatabase;
+// Vérifier si la connexion est réussie
+connection.connect((err) => {
+    if (err) {
+      console.error('Erreur de connexion à la base de données : ' + err.stack);
+      return;
+    } console.log('Connecté à la base de données');
+  });
+
+module.exports = connection;

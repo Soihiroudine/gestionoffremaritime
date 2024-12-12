@@ -3,20 +3,38 @@ require('dotenv').config();
 // On import le framework express
 const express = require("express");
 const layouts = require("express-ejs-layouts"); 
-// const bodyParser = require('body-parser');
-const connectDB = require("./serveur/config/db.js");
+const session = require("express-session");
+const flash = require("connect-flash");
+// const connectDB = require("./serveur/config/db.js");
 
 // Connection à la base de donné
-connectDB();
 
 // On créer l'application expressJs avec : app
 const app = express();
+
+app.use(layouts);
+app.set("layout", "./layouts/main");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // fichier static
 app.use(express.static("public"));
+
+// Express session
+app.use(
+    session({
+        secret: "secret",
+        resave: false,
+        saveUninitialized: true,
+        cookie: {
+            maxAge: 100 * 60* 60 * 24 * 7
+        }
+    })
+);
+
+// Flash message
+app.use(flash({sessionKeyName: "flashMessage" }));
 
 // Engine
 app.set("views", "./views");
@@ -28,6 +46,7 @@ app.use("/", require("./serveur/routes/contact"));
 app.use("/", require("./serveur/routes/formation"));
 app.use("/", require("./serveur/routes/inscription"));
 
+// Toutes les routes qui n'existe pas on la page d'erreur
 app.get("*", (req, res) => {
     res.status(404).render("404");
 });

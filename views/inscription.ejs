@@ -1,93 +1,76 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/inscription.css">
+<main>
+    <section class="inscription">
+        <section class="infoLiens">
+            <% if (estInscrit===10) { %>
+                <h1>Inscrivez-vous ici</h1>
+                <p>Vous etes déjà inscrit ?</p>
+                <p><a href="/connexion">Connectez-vous !</a></p>
 
-    <script src="js/formulaireInscription.js" defer></script>
-
-    <!-- Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <title>Inscription</title>
-</head>
-<body>
-    <main>
-        <section class="inscription">
-            <section class="infoLiens">
-                <% if (estInscrit === 10) { %>
-                    <h1>Inscrivez-vous ici</h1>
-                    <p>Vous etes déjà inscrit ?</p>
-                    <p><a href="/connexion">Connectez-vous !</a></p>
-
-                <% }else if(estInscrit === 20) { %>
+                <% }else if(estInscrit===20) { %>
                     <h1>Connectez-vous ici</h1>
                     <p>Vous n'êtes pas encore inscrit ?</p>
                     <p><a href="/inscription">Inscrivez-vous !</a></p>
-                <% } %>
-        
-                <h1>Inscrivez-vous ici</h1>
-                <p>Retour dans <a href="/">Acceuil</a></p>
+                    <% } %>
+
+                        <h1>Inscrivez-vous ici</h1>
+                        <p>Retour dans <a href="/">Acceuil</a></p>
+        </section>
+
+        <% if (estInscrit===2) { %>
+            <form action="/connexion" method="post">
+                <section class="informationFormulaire">
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                </section>
+
+                <section class="informationFormulaire">
+                    <input type="password" id="passwordConnexion" name="passwordConnexion" class="motDePasse"
+                        placeholder="Mot de passe" required>
+                    <img src="images/passHide.png" alt="hide" class="imgMotPasse">
+                </section>
+
+                <section class="informationFormulaire">
+                    <input type="submit" value="Se connecter">
+                </section>
+
+            </form>
+
+    </section>
+
+    <% }else if(estInscrit===1) { %>
+        <form action="/inscription" method="post">
+            <section class="informationFormulaire">
+                <!-- <label for="nom">Nom</label> -->
+                <input type="text" id="nom" name="nom" placeholder="nom" required>
             </section>
 
-            <% if (estInscrit === 2) { %>
-                <form action="/connexion" method="post">
-                    <section class="informationFormulaire">
-                        <input type="email" id="email" name="email" placeholder="E-mail" required>
-                    </section>
+            <section class="informationFormulaire">
+                <!-- <label for="prenom">Prenom</label> -->
+                <input type="text" id="prenom" name="prenom" placeholder="prenom" required>
+            </section>
 
-                    <section class="informationFormulaire">
-                        <input type="password" id="passwordConnexion" name="passwordConnexion" class="motDePasse" placeholder="Mot de passe" required>
-                        <img src="images/passHide.png" alt="hide" class="imgMotPasse">
-                    </section>
+            <section class="informationFormulaire">
+                <!-- <label for="E-mail">E-mail</label> -->
+                <input type="email" id="mail" name="mail" placeholder="mail" required>
+            </section>
 
-                    <section class="informationFormulaire">
-                        <input type="submit" value="Se connecter">
-                    </section>
-                    
-                </form>
-                         
-                    </section>
-                
-            <% }else if(estInscrit === 1) { %>
-                <form action="/inscription" method="post">
-                    <section class="informationFormulaire">
-                        <!-- <label for="nom">Nom</label> -->
-                        <input type="text" id="nom" name="nom" placeholder="nom" required>
-                    </section>
-    
-                    <section class="informationFormulaire">
-                        <!-- <label for="prenom">Prenom</label> -->
-                        <input type="text" id="prenom" name="prenom" placeholder="prenom" required>
-                    </section>
-    
-                    <section class="informationFormulaire">
-                        <!-- <label for="E-mail">E-mail</label> -->
-                        <input type="email" id="mail" name="mail" placeholder="mail" required>
-                    </section>
-    
-                    <section class="informationFormulaire">
+            <section class="informationFormulaire">
+                <!-- <label for="password">Mot de passe</label> -->
+                <input type="password" name="password" id="password" class="motDePasse" placeholder="mot de passe"
+                    required>
+                <img src="images/passHide.png" alt="hide" class="imgMotPasse">
+            </section>
+
+            <!-- <section class="informationFormulaire">
                         <!-- <label for="password">Mot de passe</label> -->
-                        <input type="password" name="password" id="password" class="motDePasse" placeholder="mot de passe" required>
-                        <img src="images/passHide.png" alt="hide" class="imgMotPasse">
-                    </section>
-    
-                    <!-- <section class="informationFormulaire">
-                        <!-- <label for="password">Mot de passe</label> -->
-                        <!-- <input type="password" name="confirmPassword" id="confirmPassword" class="motDePasse" placeholder="confirmé mot de passe" required> -->
-                        <!-- <img src="images/passHide.png" alt="hide" class="imgMotPasse"> -->
-                    <!-- </section> -->
-    
-                    <section class="informationFormulaire">
-                        <input type="submit" id="bouton" value="Envoyer">
-                    </section>
-                </form>
-            <% } %>
-            
-        </section>
-    </main>
-</body>
-</html>
+            <!-- <input type="password" name="confirmPassword" id="confirmPassword" class="motDePasse" placeholder="confirmé mot de passe" required> -->
+            <!-- <img src="images/passHide.png" alt="hide" class="imgMotPasse"> -->
+            <!-- </section> -->
+
+            <section class="informationFormulaire">
+                <input type="submit" id="bouton" value="Envoyer">
+            </section>
+        </form>
+        <% } %>
+
+            </section>
+</main>
