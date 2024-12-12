@@ -48,3 +48,26 @@ git push -u origin main
 ```
 
 ## Structure du projet
+
+### BASE DE DONNE
+
+```mysql
+CREATE DATABASE offre_formation_maritime;
+
+USE offre_formation_maritime;
+
+CREATE TABLE identification(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nom VARCHAR(155) NOT NULL,
+    prenom VARCHAR(155) NOT NULL,
+    email VARCHAR(155) NOT NULL
+);
+
+CREATE TABLE admin(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    nomIdentifiant VARCHAR(155) NOT NULL,
+    password VARCHAR(155) NOT NULL
+);
+
+
+```

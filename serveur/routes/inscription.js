@@ -12,9 +12,9 @@ router.get('/inscription', (req, res, next) => {
 
 // Inscription des nouveau utilisateurs
 router.post("/inscription", (req, res) => {
-    const { nom, prenom, mail, password } = req.body;
+    const { nom, prenom, mail } = req.body;
     
-    connectDB.query('INSERT INTO identification(nom, prenom, email, motDePasse) VALUES (?, ?, ?, ?);', [nom, prenom, mail, password], (err, resultat) => {
+    connectDB.query('INSERT INTO identification(nom, prenom, email) VALUES (?, ?, ?);', [nom, prenom, mail], (err, resultat) => {
         if (err) {
             console.log(err);
         } else {

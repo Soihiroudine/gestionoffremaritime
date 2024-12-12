@@ -8,8 +8,20 @@
 body {
     background-color: #9BCEF5;
 }
+
+.erreur {
+    text-align: center;
+
+}
+
 button {
     cursor: pointer;
+    padding: 0.4em;
+}
+
+button:hover {
+    background-color: #024170;
+    color: #F3F9FE;
 }
 #main {
     background-image: url("../images/indexImage.jpg");
@@ -19,7 +31,7 @@ button {
     background-size: cover;
     width: 100%;
     height: 37.5em;
-    margin: -2.5em 0;
+    margin: -2.5em 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,16 +75,34 @@ tr:nth-child(even) {
 
 #formation {
     width: 100%;
-    height: auto;
-    margin: 1em;
+    height: 37.5em;
+    background-color: #024170;
 }
 
 #contact {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/contactImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: -2.5em;
 }
 
-/* @keyframes slideBaleine {
-    from {
+#contact p{
+    margin: 1em 0;
+    font-size: 2em;
+    text-decoration: underline;
+}
 
-    }
-} */
+#contact input, #contact textarea {
+    background-color: #9bcef5a8;
+}
+#contact input[type="submit"] {
+    background-color: #9BCEF5;
+    color: #024170;
+}
+#contact input[type="submit"]:hover{
+    background-color: #024170;
+    color: #9BCEF5;
+}
