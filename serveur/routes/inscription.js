@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const connectDB = require("./../config/db");
+;
 
 router.get('/inscription', (req, res, next) => {
     res.render('inscription', { estInscrit: 1 });
@@ -19,6 +20,7 @@ router.post("/inscription", (req, res) => {
             console.log(err);
         } else {
             console.log("Insertion reussie");
+            req.flash('success_msg', 'Inscription réussie!');
             res.status(300).redirect("/");
         }
     });

@@ -28,17 +28,24 @@ app.use(
         resave: false,
         saveUninitialized: true,
         cookie: {
-            maxAge: 100 * 60* 60 * 24 * 7
+            maxAge: 100 * 60* 60 * 24 * 7 // au mois une semaine
         }
     })
 );
 
 // Flash message
-app.use(flash({sessionKeyName: "flashMessage" }));
+app.use(flash());
+
 
 // Engine
 app.set("views", "./views");
 app.set("view engine", "ejs");
+
+app.use((req, res, next) => {
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next();
+});
 
 // Appel des routes
 app.use('/', require("./serveur/routes/index"));
