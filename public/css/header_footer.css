@@ -34,7 +34,15 @@ hr {
     margin: 1em 1.5em;
     transition: 0.4s;
 }
+.headerInscription {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
+.headerInscription a {
+    margin: 0 1em;
+}
 nav img:hover, .headerInscription img:hover {
     transform: scale(1.5);
     filter: sepia(100%);

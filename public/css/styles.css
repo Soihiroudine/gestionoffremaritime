@@ -8,7 +8,9 @@
 body {
     background-color: #9BCEF5;
 }
-
+button {
+    cursor: pointer;
+}
 #main {
     background-image: url("../images/indexImage.jpg");
     opacity: 1;
@@ -29,6 +31,46 @@ body {
     opacity: 1;
     color: #024170;
 }
+
+table {
+	width:100%;
+    border: none;
+    background-color: #F3F9FE;
+}
+
+caption {
+    font-size: 2em;
+    font-weight: bold;
+}
+tr th{
+    background-color: #024170;
+    color: #F3F9FE;
+    padding: 1.5em;
+}
+
+caption, th, td {
+    padding: 1em;
+    text-align: center;
+    
+}
+tr:nth-child(odd) {
+    background-color: #98b0c2;
+}
+
+tr:nth-child(even) {
+    background-color: #d5e7f5;
+}
+
+#formation {
+    width: 100%;
+    height: auto;
+    margin: 1em;
+}
+
+#contact {
+    margin: 0 auto;
+}
+
 /* @keyframes slideBaleine {
     from {
 

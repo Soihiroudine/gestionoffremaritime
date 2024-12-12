@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/formation', (req, res, next) => {
-    res.render('formation');
+router.get('/profil', (req, res, next) => {
+    res.render('profil');
 });
 
 module.exports = router;
