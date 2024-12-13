@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const connectDB = require("./../config/db");
 
+
 router.get('/profile', (req, res) => {
-    console.log("Ariver dans profil !");
     if (req.session.user) {
         res.render("profil", { utilisateur : req.session.user });
     } else {

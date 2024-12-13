@@ -1,0 +1,21 @@
+.profil {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.evennement {
+    margin: 1em;
+}
+
+.evennement a {
+    text-decoration: none;
+    font-size: 1.4em;
+    color: #024170;
+    background-color: #F3F9FE;
+    border-radius: 0.2em;
+    padding: 1em;
+    margin: 1em;
+}

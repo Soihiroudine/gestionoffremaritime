@@ -4,14 +4,17 @@ const connectDB = require("./../config/db");
 
 
 router.get("/listeEleve", (req, res) => {
-    connectDB.query('SELECT * FROM identification', (err, resulthat) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.render("afficheEleve", { resulthat });
-        }
-    });
-
+    if(req.session.user) {
+        connectDB.query('SELECT * FROM identification', (err, resulthat) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.render("afficheEleve", { resulthat });
+            }
+        });
+    }else {
+        res.redirect("/connexion");
+    }
 });
 
 // Suppression d'un element a partir de son id

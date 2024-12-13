@@ -23,6 +23,8 @@ router.post("/inscription", (req, res) => {
     });
 });
 
+
+// Connexion des administrateur
 router.get("/connexion", (req, res, next) => {
     res.render('inscription', {estAdmin: true});
 });

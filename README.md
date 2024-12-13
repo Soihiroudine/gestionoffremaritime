@@ -28,12 +28,14 @@ npm install ejs
 npm install express-ejs-layouts
 npm install express-session
 npm install mysql2
-npm install nodemon
+npm install -g nodemon 
 npm install dotenv
 
 ```
 
 ### Création de fichier `.gitignore` pour exclure des fichiers et/ou des dossiers dans le git
+
+Le le fichier `.gitignore` doit être dans la racine du dossier de travail
 
 ```bash
 touch .gitignore
@@ -81,4 +83,15 @@ CREATE TABLE formation(
     lieuFormation VARCHAR(100) NOT NULL
 );
 
+```
+
+### Inscription des eleves
+
+### Connection de ou des administrateurs du site
+
+Pour pouvoir vous connecter dans le site et accéder au éleves :
+
+```txt
+identifiant : Administrateur
+mot de passe : pomme976
 ```
