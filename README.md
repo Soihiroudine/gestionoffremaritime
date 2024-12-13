@@ -25,9 +25,11 @@ initialisation de notre projet : `npm init`
 ```bash
 npm install express --save
 npm install ejs
-npm install express-myconnection
+npm install express-ejs-layouts
+npm install express-session
 npm install mysql2
 npm install nodemon
+npm install dotenv
 
 ```
 

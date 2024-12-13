@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); // on va vouloir acceder a notre fichier .env
 
 // On import le framework express
 const express = require("express");
@@ -10,8 +10,10 @@ const session = require("express-session");
 
 // On créer l'application expressJs avec : app
 const app = express();
+
 const sessionCle = process.env.SESSION_SECRET;
 
+// On va se servir d'une structure de base pour toutes les page web dans notre projet
 app.use(layouts);
 app.set("layout", "./layouts/main");
 
@@ -22,15 +24,14 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Express session
-app.use(
-    session({
+app.use( session({
         secret: sessionCle,
         resave: false,
         saveUninitialized: true,
         cookie: { 
-          secure: true, 
-          httpOnly: true
-         }
+            secure: false, 
+            maxAge: 1000 * 60 * 30 //30 minutes 
+        }
     })
 );
 

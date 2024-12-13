@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// const connectDB = require("./../config/db");
+const connectDB = require("./../config/db");
 
 router.get('/profile', (req, res) => {
     console.log("Ariver dans profil !");

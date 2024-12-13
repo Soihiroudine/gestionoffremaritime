@@ -10,7 +10,6 @@
   "author": "MOUSSA Soihiroudine",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "body-parse": "^0.1.0",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^16.4.7",
