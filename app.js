@@ -56,6 +56,7 @@ app.use("/", require("./serveur/routes/contact"));
 app.use("/", require("./serveur/routes/profil"));
 app.use("/", require("./serveur/routes/inscription"));
 app.use("/", require("./serveur/routes/afficheEleves"));
+app.use("/", require("./serveur/routes/formation"));
 
 // Toutes les routes qui n'existe pas on la page d'erreur
 app.get("*", (req, res) => {

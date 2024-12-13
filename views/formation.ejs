@@ -1,0 +1,27 @@
+<main>
+    <section class="afficheFormation">
+        <% %>
+    </section>
+
+    <section class="ajoutFormation">
+        <form action="/ajoutFormation" method="POST">
+            <section class="ligneFormation titre">
+                <input type="text" id="titreFormation" name="titreFormation">
+            </section>
+
+            <section class="ligneFormation detail">
+                <textarea name="detailFormation" id="detailFormation"></textarea>
+            </section>
+
+            <section class="ligneFormation lieu">
+                <label><input type="radio" name="detailLieu" value="Distanciel" checked>Distanciel</label>
+                <label><input type="radio" name="detailLieu" value="Presentiel">Presentiel</label>
+            </section>
+
+            <section class="ligneFormation entree">
+                <input type="submit" value="Ajouter">
+            </section>
+
+        </form>
+    </section>
+</main>

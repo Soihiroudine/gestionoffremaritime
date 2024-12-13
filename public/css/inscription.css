@@ -40,7 +40,7 @@
     position: relative;
 }
 
-.informationFormulaire input, textarea {
+.informationFormulaire input, .informationFormulaire textarea {
     background-color: #A1AFF7;
     padding: 0.9em 1em;
     outline: none;  

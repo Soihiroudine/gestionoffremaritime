@@ -17,6 +17,13 @@
     color: #024170;
     background-color: #F3F9FE;
     border-radius: 0.2em;
-    padding: 1em;
+    padding: 0.1em;
     margin: 1em;
+    transition: 0.4s;
+}
+
+.evennement a:hover {
+    background-color: #024170;
+    color: #F3F9FE;
+    transform: scale(1.2);
 }
