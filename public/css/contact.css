@@ -1,0 +1,27 @@
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../images/contactImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0 0 2.5em 0;
+}
+
+#contact p{
+    margin: 1em 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    background-color: #4b90c5a8;
+}
+#contact input[type="submit"] {
+    background-color: #96cefa;
+    color: #024170;
+}
+#contact input[type="submit"]:hover{
+    background-color: #024170;
+    color: #9BCEF5;
+}
