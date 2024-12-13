@@ -34,7 +34,6 @@ app.use(
     })
 );
 
-
 // Engine
 app.set("views", "./views");
 app.set("view engine", "ejs");

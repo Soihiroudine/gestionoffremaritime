@@ -17,7 +17,6 @@ router.post("/inscription", (req, res) => {
             console.log(err);
         } else {
             console.log("Insertion reussie");
-            req.flash('success_msg', 'Inscription réussie!');
             return res.status(300).redirect("/");
         }
         return res.status(404).redirect("/inscription");
