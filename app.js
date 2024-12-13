@@ -4,13 +4,13 @@ require('dotenv').config();
 const express = require("express");
 const layouts = require("express-ejs-layouts"); 
 const session = require("express-session");
-const flash = require("connect-flash");
 // const connectDB = require("./serveur/config/db.js");
 
 // Connection à la base de donné
 
 // On créer l'application expressJs avec : app
 const app = express();
+const sessionCle = process.env.SESSION_SECRET;
 
 app.use(layouts);
 app.set("layout", "./layouts/main");
@@ -24,28 +24,31 @@ app.use(express.static("public"));
 // Express session
 app.use(
     session({
-        secret: "secret",
+        secret: sessionCle,
         resave: false,
         saveUninitialized: true,
-        cookie: {
-            maxAge: 100 * 60* 60 * 24 * 7 // au mois une semaine
-        }
+        cookie: { 
+          secure: true, 
+          httpOnly: true
+         }
     })
 );
-
-// Flash message
-app.use(flash());
 
 
 // Engine
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.use((req, res, next) => {
-    res.locals.success_msg = req.flash('success_msg');
-    res.locals.error_msg = req.flash('error_msg');
-    next();
-});
+app.get('/', (req, res) => {
+    if (req.session.views) {
+      req.session.views++; // Incrémenter la vue à chaque visite
+      // res.send(`<h1>Vous avez visité cette page ${req.session.views} fois.</h1>`);
+    } else {
+      req.session.views = 1; // Initialiser si c'est la première visite
+      // res.send('<h1>Bienvenue ! C\'est votre première visite.</h1>');
+    }
+    res.redirect("/index");
+  });
 
 // Appel des routes
 app.use('/', require("./serveur/routes/index"));
